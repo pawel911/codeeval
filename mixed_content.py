@@ -7,7 +7,7 @@ for line in test_cases:
     line = line.rstrip("\n").split(',')
     
     numbers = []
-    strings =[]
+    strings = []
     
     for i in range(len(line)):
         if line[i][0].isdigit :
