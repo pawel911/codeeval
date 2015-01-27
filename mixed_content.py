@@ -10,11 +10,8 @@ for line in test_cases:
     strings = []
     
     for i in range(len(line)):
-        if line[i][0].isdigit :
-           numbers.append(line[i])
-           
-        else:
-           strings.append(line[i])
+        if line[i][0].isdigit: numbers.append(line[i])
+        else: strings.append(line[i])
            
     if len(strings) > 0 and len(numbers) > 0:
         output = ",".join(strings) + "|" + ",".join(numbers)
@@ -23,5 +20,5 @@ for line in test_cases:
     else: output = ""  
           
     print output
-      
+
 test_cases.close()
