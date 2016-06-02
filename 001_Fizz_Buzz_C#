@@ -1,3 +1,6 @@
+//Challenge description:
+//https://www.codeeval.com/open_challenges/1/
+
 using System.IO;
 using System.Collections.Generic;
 using System;
