@@ -1,0 +1,16 @@
+//Challenge description:
+//https://www.codeeval.com/open_challenges/25/
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        for (int i = 1; i < 100; i = i + 2)
+        {
+            Console.WriteLine(i);
+        }
+        //Console.Read();
+    }
+}
