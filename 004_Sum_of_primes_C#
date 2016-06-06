@@ -1,0 +1,37 @@
+//Challenge description:
+//https://www.codeeval.com/open_challenges/4/
+
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int index = 0;
+        int sumOfPrimes = 0;
+        int i = 1;
+
+        while (index < 1000)
+        {
+            if (isPrime(i))
+                {
+                index += 1;
+                sumOfPrimes += i;
+                i += 1;
+                }
+            else
+            {
+                i += 1;
+            }
+        }
+        Console.WriteLine(sumOfPrimes);
+
+        //Console.ReadKey();
+    }
+
+    static public bool isPrime(int number)
+    {
+        return (Enumerable.Range(1, number).Where(x => number % x == 0).Count() == 2);
+    }
+}

@@ -1,0 +1,33 @@
+//challenge description:
+//https://www.codeeval.com/open_challenges/3/
+
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        for (int i = 999; i >= 5; i--)
+        {
+            if (isPalindrome(Convert.ToString(i)) && isPrime(i))
+            {
+                Console.WriteLine(i);
+                break;
+            }
+        }
+
+        //Console.ReadKey();
+    }
+
+    static public bool isPrime(int number)
+    {
+        return (Enumerable.Range(1, number).Where(x => number % x == 0).Count() == 2);
+    }
+
+    static public bool isPalindrome(string stringNumber)
+    {
+        return stringNumber.SequenceEqual(stringNumber.Reverse());
+    }
+}
