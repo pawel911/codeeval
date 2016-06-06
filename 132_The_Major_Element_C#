@@ -1,0 +1,45 @@
+//challenge description:
+//https://www.codeeval.com/open_challenges/132/
+
+using System.IO;
+using System.Collections.Generic;
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        using (StreamReader reader = File.OpenText(args[0]))
+        //using (StreamReader reader = File.OpenText("TextFile1.txt"))
+
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                if (null == line)
+                    continue;
+
+                string majorElement = "None";
+                List<string> checkedElements = new List<string> { };
+                int count;
+                string[] words = line.Split(',');
+
+                for (int i = 0; i <= words.Length / 2; i++)
+                {
+                    if (!checkedElements.Contains(words[i]))
+                    {
+                        count = words.Count(x => x == words[i]);
+                        checkedElements.Add(words[i]);
+
+                        if (count > words.Length / 2)
+                        {
+                            majorElement = words[i];
+                            break;
+                        }
+                    }
+                }
+                Console.WriteLine(majorElement);
+            }
+        //Console.Read();
+    }
+}
