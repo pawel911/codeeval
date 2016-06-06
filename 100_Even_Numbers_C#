@@ -1,0 +1,29 @@
+// Challenge description:
+//https://www.codeeval.com/open_challenges/100/
+
+using System.IO;
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        using (StreamReader reader = File.OpenText(args[0]))
+        //using (StreamReader reader = File.OpenText("TextFile1.txt"))
+
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                if (null == line)
+                    continue;
+
+                int number = System.Convert.ToInt32(line);
+
+                if (number % 2 == 0)
+                    Console.WriteLine("1");
+                else
+                    Console.WriteLine("0");
+            }
+        //Console.Read();
+    }
+}
