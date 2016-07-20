@@ -44,6 +44,5 @@ class Program
                 Console.WriteLine("{0}", arrowCounter);
                 arrowCounter = 0;
             }
-        Console.Read();
     }
 }
