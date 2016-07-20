@@ -1,0 +1,49 @@
+// Challenge description:
+// https://www.codeeval.com/open_challenges/203/
+
+using System.IO;
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        using (StreamReader reader = File.OpenText(args[0]))
+        //using (StreamReader reader = File.OpenText("TextFile1.txt"))
+
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                if (null == line)
+                    continue;
+
+                int arrowCounter = 0;
+
+                for (int i = 0; i < line.Length; i++)
+                {
+                    try
+                    {
+                        if ( line[i].ToString() == "<")
+                        {
+                            if (line.Substring(i , 5) == "<--<<")
+                            {
+                                arrowCounter++;
+                            }
+                        }
+                        else if (line[i].ToString() == ">")
+                        {
+                            if (line.Substring(i, 5) == ">>-->")
+                            {
+                                arrowCounter++;
+                            }
+                        }
+                    }
+                    catch { }
+                }
+
+                Console.WriteLine("{0}", arrowCounter);
+                arrowCounter = 0;
+            }
+        Console.Read();
+    }
+}
