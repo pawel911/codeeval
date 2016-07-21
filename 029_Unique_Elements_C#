@@ -1,0 +1,34 @@
+// Challenge description:
+// https://www.codeeval.com/open_challenges/29/
+
+using System.IO;
+using System;
+using System.Text;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        using (StreamReader reader = File.OpenText(args[0]))
+        //using (StreamReader reader = File.OpenText("TextFile1.txt"))
+
+        while (!reader.EndOfStream)
+            {
+                StringBuilder output = new StringBuilder();
+                string[] numbers = reader.ReadLine().Split(',');
+
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (i == 0)
+                    {
+                        output.Append(numbers[i] + ",");
+                    }
+                    else if (numbers[i] != numbers[i - 1])
+                    {
+                        output.Append(numbers[i] + ",");
+                    }
+                }
+                Console.WriteLine(output.ToString().Substring(0, output.ToString().Length - 1));
+            }
+    }
+}
