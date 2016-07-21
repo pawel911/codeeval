@@ -1,5 +1,5 @@
-//challenge description:
-//https://www.codeeval.com/open_challenges/132/
+// challenge description:
+// https://www.codeeval.com/open_challenges/132/
 
 using System.IO;
 using System.Collections.Generic;
@@ -40,6 +40,5 @@ class Program
                 }
                 Console.WriteLine(majorElement);
             }
-        //Console.Read();
     }
 }
