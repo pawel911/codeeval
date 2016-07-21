@@ -1,5 +1,5 @@
-//Challenge description:
-//https://www.codeeval.com/open_challenges/25/
+// challenge description:
+// https://www.codeeval.com/open_challenges/25/
 
 using System;
 
@@ -11,6 +11,5 @@ class Program
         {
             Console.WriteLine(i);
         }
-        //Console.Read();
     }
 }
