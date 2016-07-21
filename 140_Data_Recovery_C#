@@ -1,6 +1,5 @@
-// Challenge description:
+// challenge description:
 // https://www.codeeval.com/open_challenges/140/
-
 
 using System.IO;
 using System;
