@@ -1,0 +1,54 @@
+// Challenge description:
+// https://www.codeeval.com/open_challenges/87/
+
+using System.IO;
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[,] matrix = new int[256, 256];
+        int count = 0;
+        using (StreamReader reader = File.OpenText(args[0]))
+        //using (StreamReader reader = File.OpenText("TextFile1.txt"))
+
+        while (!reader.EndOfStream)
+            {
+                string[] line = reader.ReadLine().Split(' ');
+
+                if (line[0] == "SetCol")
+                {
+                    for ( int i = 0; i <256; i++)
+                    {
+                        matrix.SetValue(Int32.Parse(line[2]), Int32.Parse(line[1]), i);
+                    }
+                }
+                else if (line[0] == "SetRow")
+                {
+                    for (int i = 0; i < 256; i++)
+                    {
+                        matrix.SetValue(Int32.Parse(line[2]), i, Int32.Parse(line[1]));
+                    }
+                }
+                else if (line[0] == "QueryRow")
+                {
+                    count = 0;
+                    for (int i = 0; i < 256; i++)
+                    {
+                        count += matrix[i, Int32.Parse(line[1])];
+                    }
+                    Console.WriteLine("{0}", count);
+                }
+                else if (line[0] == "QueryCol")
+                {
+                    count = 0;
+                    for (int i = 0; i < 256; i++)
+                    {
+                        count += matrix[Int32.Parse(line[1]), i];
+                    }
+                    Console.WriteLine("{0}", count);
+                }
+            }
+    }
+}
