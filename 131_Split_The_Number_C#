@@ -1,0 +1,45 @@
+// challenge description:
+// https://www.codeeval.com/open_challenges/131/
+
+using System.IO;
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        using (StreamReader reader = File.OpenText(args[0]))
+        //using (StreamReader reader = File.OpenText("TextFile1.txt"))
+
+        while (!reader.EndOfStream)
+            {
+                string[] values = reader.ReadLine().Split(' ');
+
+                string number = values[0];
+                string pattern = values[1];
+                int index = 0;
+
+                if (pattern.IndexOf("+") != -1)
+                {
+                    index = (pattern.IndexOf("+"));
+                }
+
+                if (pattern.IndexOf("-") != -1)
+                {
+                    index = (pattern.IndexOf("-"));
+                }
+                
+                int firstNumber = Int32.Parse(number.Substring(0, index));
+                int secondNumber = Int32.Parse(number.Substring(index, number.Length - index)); ;
+
+                if (pattern[index].ToString() == "+")
+                {
+                    Console.WriteLine("{0}", firstNumber + secondNumber);
+                }
+                else
+                {
+                    Console.WriteLine("{0}", firstNumber - secondNumber);
+                }
+            }
+    }
+}
