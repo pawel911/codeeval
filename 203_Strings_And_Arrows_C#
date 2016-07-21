@@ -1,4 +1,4 @@
-// Challenge description:
+// challenge description:
 // https://www.codeeval.com/open_challenges/203/
 
 using System.IO;
@@ -40,7 +40,6 @@ class Program
                     }
                     catch { }
                 }
-
                 Console.WriteLine("{0}", arrowCounter);
                 arrowCounter = 0;
             }
