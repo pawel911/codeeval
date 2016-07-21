@@ -1,4 +1,4 @@
-// Challenge description:
+// challenge description:
 // https://www.codeeval.com/open_challenges/92/
 
 using System.IO;
@@ -21,6 +21,5 @@ class Program
 
                 Console.WriteLine(words[words.Length - 2]);
             }
-        //Console.Read();
     }
 }
